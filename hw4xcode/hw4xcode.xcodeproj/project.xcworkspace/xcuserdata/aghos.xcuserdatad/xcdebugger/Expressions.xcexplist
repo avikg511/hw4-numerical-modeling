@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<VariablesViewState
+   version = "1.0">
+   <ContextStates>
+      <ContextState
+         contextName = "GLOBAL">
+         <PersistentStrings>
+            <PersistentString
+               value = "std::numeric_limits&lt;size_type&gt;::max">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "Models::runForwardEuler():models.cpp">
+         <PersistentStrings>
+            <PersistentString
+               value = "data(timeStep - 1, prevSpaceInd)">
+            </PersistentString>
+            <PersistentString
+               value = "int(ceil(this-&gt;duration / timeRes)) + 1">
+            </PersistentString>
+            <PersistentString
+               value = "data(timeStep - 1, xStep + 1)">
+            </PersistentString>
+            <PersistentString
+               value = "2 * data(timeStep -1, xStep)">
+            </PersistentString>
+            <PersistentString
+               value = "dt /dx / dx">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "Models::Models(double, double, double):models.cpp">
+         <PersistentStrings>
+            <PersistentString
+               value = "int(ceil(this-&gt;duration / timeRes)) + 1">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "Models::runMatsuno():models.cpp">
+         <PersistentStrings>
+            <PersistentString
+               value = "calcIndexMatsuno(xStep, 0 + 2, numSpaceSteps)">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "main:main.cpp">
+         <PersistentStrings>
+            <PersistentString
+               value = "std::pow(10, 3)">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "Models::findRMSError():models.cpp">
+         <PersistentStrings>
+            <PersistentString
+               value = "exactSoln(finalTStep - 1, col)">
+            </PersistentString>
+            <PersistentString
+               value = "data(finalTStep,col)">
+            </PersistentString>
+            <PersistentString
+               value = "exactSoln(finalTStep, col)">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "Models::exactSoln(int, int):models.cpp">
+         <PersistentStrings>
+            <PersistentString
+               value = "std::exp(-4 * std::pow(M_PI, 2) * (timeStep * dt)) * cos(2 * M_PI * (spaceStep * dx))">
+            </PersistentString>
+            <PersistentString
+               value = "spaceStep * dx">
+            </PersistentString>
+            <PersistentString
+               value = "finalTStep * 0.05">
+            </PersistentString>
+            <PersistentString
+               value = "timeStep * dt">
+            </PersistentString>
+            <PersistentString
+               value = "-4 * 3.14 * 3.14 * 0.3">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+   </ContextStates>
+</VariablesViewState>
