@@ -27,32 +27,27 @@ int main(int argc, const char * argv[]) {
     long double duration = 0.3;
     long double xStepSize = 0.05;
     
+    // Sigma values here are the variables we modify to test numerical stability/rms error
     ublas::vector<long double> sigma (1800);
     boost::algorithm::iota(sigma.begin(), sigma.end(), 1);
+
+    // Currently stepped through from 1 to 1800, and then scaled by time/space resolution
     sigma *= 5;
     sigma *= 1.0 / std::pow(10, 7) / std::pow(xStepSize, 2);
+
+    // Time Values here for timesteps, it's just the sigma value with the space resolution multiplied
     auto tVals = sigma * std::pow(xStepSize, 2);
     
-    std::ofstream myRegFile("outputFEData.csv");
-    std::ofstream myMatFile("outputMatFEData.csv");
-//    for (auto it = tVals.begin(); it != tVals.end(); it++) {
-////         It's not my favorite piece of code, but here I just reinitialize the class every timestep. Otherwise, \\
-//            I'd need to basically delete the matrices, reinitialize the sizing with the new time resolution, etc. etc.
-//        Models model(*it, duration, xStepSize);
-////        model.runMatsuno();
-//        model.runForwardEuler();
-//        model.findRMSError();
-//        myRegFile << *it << "," << model.rms << std::endl;
-//
-//    }
+    // Data outputs to this file
+    std::ofstream myFile("outputData.csv");
     
     for (auto it = tVals.begin(); it != tVals.end(); it++) {
 //         It's not my favorite piece of code, but here I just reinitialize the class every timestep. Otherwise, \\
             I'd need to basically delete the matrices, reinitialize the sizing with the new time resolution, etc. etc.
         Models model(*it, duration, xStepSize);
-        model.runImplicitEulerMatrix();
+        model.runImplicitEulerMatrix(); // Switch out with different methods as needed
         model.findRMSError();
-        myMatFile << *it << "," << model.rms << std::endl;
+        myFile << *it << "," << model.rms << std::endl;
 
     }
     return 0;

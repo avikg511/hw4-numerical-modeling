@@ -6,10 +6,17 @@ Below is a file tree that I'll try to keep updated:
 .
 ├── CMakeLists.txt
 ├── README.md
-├── main.cpp
+├── inc
+│   └── models.hpp
+├── src
+│   ├── main.cpp
+│   └── models.cpp
 └── writeup
+    ├── images
+    │   ├── image-*.png
     ├── test.pdf
     └── writeup.md
 
-2 directories, 5 files
+5 directories, 22 files
+
 ```
