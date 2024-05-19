@@ -62,8 +62,8 @@
             filePath = "models.cpp"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "81"
-            endingLineNumber = "81"
+            startingLineNumber = "134"
+            endingLineNumber = "134"
             landmarkName = "Models::exactSoln(timeStep, spaceStep)"
             landmarkType = "7">
             <Locations>
@@ -226,6 +226,118 @@
                   offsetFromSymbolStart = "828">
                </Location>
             </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "3F26A564-FBCC-48F9-8FF2-03B52272E897"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "src/models.cpp"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "109"
+            endingLineNumber = "109"
+            landmarkName = "Models::runForwardEulerMatrix()"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "3F26A564-FBCC-48F9-8FF2-03B52272E897 - de76cf3e4f6b2fac"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Models::runForwardEulerMatrix()"
+                  moduleName = "hw4xcode"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/aghos/Documents/CPPWork/sioc224/homework4/hw4xcode/src/models.cpp"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "115"
+                  endingLineNumber = "115"
+                  offsetFromSymbolStart = "836">
+               </Location>
+               <Location
+                  uuid = "3F26A564-FBCC-48F9-8FF2-03B52272E897 - de76cf3e4f6b2f03"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Models::runForwardEulerMatrix()"
+                  moduleName = "hw4xcode"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/aghos/Documents/CPPWork/sioc224/homework4/hw4xcode/src/models.cpp"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "118"
+                  endingLineNumber = "118"
+                  offsetFromSymbolStart = "996">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "4673BE7A-4F45-456B-B552-7A746656FE7A"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "src/models.cpp"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "103"
+            endingLineNumber = "103"
+            landmarkName = "Models::runForwardEulerMatrix()"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "4673BE7A-4F45-456B-B552-7A746656FE7A - de76cf3e4f6b2d10"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Models::runForwardEulerMatrix()"
+                  moduleName = "hw4xcode"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/aghos/Documents/CPPWork/sioc224/homework4/hw4xcode/src/models.cpp"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "103"
+                  endingLineNumber = "103"
+                  offsetFromSymbolStart = "656">
+               </Location>
+               <Location
+                  uuid = "4673BE7A-4F45-456B-B552-7A746656FE7A - de76cf3e4f6b2d31"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Models::runForwardEulerMatrix()"
+                  moduleName = "hw4xcode"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/aghos/Documents/CPPWork/sioc224/homework4/hw4xcode/src/models.cpp"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "104"
+                  endingLineNumber = "104"
+                  offsetFromSymbolStart = "652">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "4B0F998E-C432-4133-BBF7-9F1227CED855"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "src/models.cpp"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "165"
+            endingLineNumber = "165"
+            landmarkName = "Models::runImplicitEulerMatrix()"
+            landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
    </Breakpoints>

@@ -65,24 +65,51 @@ Simplifying by dividing out the $\kappa, u_0$, we get $$\frac{\partial C}{\parti
 
 Here, $\sigma$ is actually a different value. We still divide by the $\Delta x^2$ for the semidiscrete equation, and multiply by $\Delta t$, but now we don't really need the $\kappa$, so $\sigma = \frac{\Delta t}{\Delta x^2}$.
 
-## Plot of RMS Error vs Time
-![Plot of RMS error vs Time (x axis). The dt range is 0 to 0.0014 for time, which corresponds to 0 to about 0.56 for sigma. Duration at 0.3](image.png)
+### Plot of RMS Error vs Time Forward Euler
+![](image.png)
+Plot of RMS error vs Time (x axis). The dt range is 0 to 0.0014 for time, which corresponds to 0 to about 0.56 for sigma. Duration at 0.3
 
 The minimum is at about 0.0004-0.0005, which corresponds to $\sigma = \frac{0.0004}{0.05^2} = 0.16$ to about $\sigma \approx 0.2$, which is close to the $\frac{1}{6}$ we were expecting. This plot starts to show the divergence at values above 0.5, but as mentioned in the question, the duration is too small. 
 
-I stepped through the times with a resolution of $5 \times 10^{-7}$ to get the grid this fine. For the next graph, I increased duration to about 0.5 seconds.
+I stepped through the times with a resolution of $ $5 \times 10^{-7}$ to get the grid this fine. For the next graph, I increased duration to about 0.5 seconds.
 
-![Plot of RMS error vs Time (x). There is a strong peak at about 0.0013 units time, and that corresponds to about sigma 0.56 (using dt / dx^2)](image-1.png)
+![](image-1.png)
+Plot of RMS error vs Time (x). There is a strong peak at about 0.0013 units time, and that corresponds to about sigma 0.56 (using $\frac{dt}{dx^2}$)
 
 Here it's a lot clearer that the 0.5 bound is accurate. One thing that was a little concerning was how much noise was in this data, and I'm curious as to why, and if that's really just floating point math again.
 
-![Main method that controlled FE code. Sigma is a temporary set of values that correspond to a proper range for sigma. Scaling that gives the tVals array for the range of time](image-2.png)
+![](image-2.png)
+Main method that controlled FE code. Sigma is a temporary set of values that correspond to a proper range for sigma. Scaling that gives the tVals array for the range of time
 
-![Class outline (header file). Here I'm actually using a real matrix class (boost::numeric::ublas) to make my life simpler, instead of doing my own indexing system. In the end, they also store it in a single line of memory so there isn't any performance tradeoffs, which is nice. data contains all the concentration values at all time, indexed by time (row) and space (collumn)](image-3.png)
+![](image-3.png)
+Class outline (header file). Here I'm actually using a real matrix class (boost::numeric::ublas) to make my life simpler, instead of doing my own indexing system. In the end, they also store it in a single line of memory so there isn't any performance tradeoffs, which is nice. data contains all the concentration values at all time, indexed by time (row) and space (collumn)
 
-![Constructor that includes initial conditions](image-4.png)
+![](image-4.png)
+Constructor that includes initial conditions
 
-![Forward Euler Code](image-5.png)
+![](image-5.png)
+Forward Euler Code
 
-![RMS error](image-6.png)
+![](image-6.png)
+RMS error
 
+### 1c - Matsuno RMS Plot
+![](image-7.png)
+RMS Error plot vs sigma (x), semilog. Error begins to diverge right around 0.25, demonstrating the derivation was correct.
+
+![](image-8.png)
+RMS Error plot again, but this time against time. I plotted the $\sigma$ first just because it's easier to read it than convert in my head from timestep sizes to sigma. Here, the divergence happens around t = 0.00063 or so. Given that sigma is still dt / dx^2, and dx = 0.05, which is about 0.252 for sigma
+
+![](image-12.png)
+Matsuno Code to solve diffusion equation. Index calculation method was separated because it's the same code multiple times.
+
+![](image-11.png)
+Matsuno Index Calculation code used in Models::runMatsuno above
+
+### 1d - Implicit Euler Plot
+![](image-9.png)
+RMS Error plot vs time. Error is always stable, and increasing time resolution will decrease error.
+
+![](image-13.png)
+![](image-14.png)
+Code to solve the Implicit Euler method.

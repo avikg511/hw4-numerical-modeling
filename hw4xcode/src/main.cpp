@@ -24,24 +24,35 @@ int main(int argc, const char * argv[]) {
         by 0.05^2 to designate them all as $\Delta t$ values. In the end, we'll plot $\Delta t$ on the x axis.
      
      */
-    long double duration = 0.5;
+    long double duration = 0.3;
     long double xStepSize = 0.05;
     
-    ublas::vector<long double> sigma (2600);
+    ublas::vector<long double> sigma (1800);
     boost::algorithm::iota(sigma.begin(), sigma.end(), 1);
     sigma *= 5;
     sigma *= 1.0 / std::pow(10, 7) / std::pow(xStepSize, 2);
     auto tVals = sigma * std::pow(xStepSize, 2);
     
-    std::ofstream myFile("outputData.csv");
+    std::ofstream myRegFile("outputFEData.csv");
+    std::ofstream myMatFile("outputMatFEData.csv");
+//    for (auto it = tVals.begin(); it != tVals.end(); it++) {
+////         It's not my favorite piece of code, but here I just reinitialize the class every timestep. Otherwise, \\
+//            I'd need to basically delete the matrices, reinitialize the sizing with the new time resolution, etc. etc.
+//        Models model(*it, duration, xStepSize);
+////        model.runMatsuno();
+//        model.runForwardEuler();
+//        model.findRMSError();
+//        myRegFile << *it << "," << model.rms << std::endl;
+//
+//    }
     
     for (auto it = tVals.begin(); it != tVals.end(); it++) {
 //         It's not my favorite piece of code, but here I just reinitialize the class every timestep. Otherwise, \\
-            I'd need to basically delete the matrices, reinitialize the sizing with the new time resolution, etc. etc.  
+            I'd need to basically delete the matrices, reinitialize the sizing with the new time resolution, etc. etc.
         Models model(*it, duration, xStepSize);
-        model.runForwardEuler();
+        model.runImplicitEulerMatrix();
         model.findRMSError();
-        myFile << *it << "," << model.rms << std::endl;
+        myMatFile << *it << "," << model.rms << std::endl;
 
     }
     return 0;
